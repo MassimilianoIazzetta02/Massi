@@ -5,8 +5,8 @@
         <li>Modifica sotto</li>
         <form method="POST" action="/modificalibri">
             <input type="hidden" name="id" value="<%= libri.id %> ">
-            <li> <input type="text" name="titolo"> </li>
-            <li><input type="text" name="fk_autore"> </li>
+            <input type="text" name="titolo"> 
+            <input type="text" name="fk_autore"> 
             <input type="submit" value="Modifica">
         </form>
         <form action="/dellibro" method="post">

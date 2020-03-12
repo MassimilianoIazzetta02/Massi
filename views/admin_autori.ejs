@@ -6,9 +6,9 @@
         <li>Modifica sotto</li>
         <form method="POST" action="/modificautori">
             <input type="hidden" name="id" value="<%= autore.id %>">
-            <li> <input type="text" name="nome"> </li>
-            <li><input type="text" name="cognome"> </li>
-            <li><input type="submit" value="Modifica"> </li>
+            <input type="text" name="nome"> 
+            <input type="text" name="cognome"> 
+            <input type="submit" value="Modifica"> 
         </form>
         <form action="/delautore" method="post">
             <input type="hidden" name="id" value="<%= autore.id %>">
