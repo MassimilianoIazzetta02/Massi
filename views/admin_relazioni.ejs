@@ -1,25 +1,25 @@
 <% relazioni.forEach(relazione => { %>
     <ul>
         <li>ID: <%= relazione.id %> </li>
-        <li>ID Autore: <%= relazione.id_autore %> </li>
-        <li>ID Libro: <%= relazione.id_libro %> </li>
+        <li>ID Writer: <%= relazione.id_autore %> </li>
+        <li>ID Book: <%= relazione.id_libro %> </li>
         <li>Modifica sotto</li>
         <form method="POST" action="/modrelazione">
             <input type="hidden" name="id" value="<%= relazione.id %>">
             <li> <input type="text" name="id_autore" value="<%= relazione.id_autore %>"> </li>
             <li><input type="text" name="id_libro" value="<%= relazione.id_libro %>"> </li>
-            <li><input type="submit" value="Modifica"> </li>
+            <li><input type="submit" value="Edit"> </li>
         </form>
         <form action="/delrelazione" method="post">
             <input type="hidden" name="id" value="<%= relazione.id %>">
-            <input type="submit" value="Elimina">
+            <input type="submit" value="Delete">
         </form>
     </ul>
 <% }) %>
-<p>Aggiunta relazione</p>
+<p>Add Relation</p>
 <form action="/addrelazione" method="post">
     <input type="text" name="id_autore" value="id autore">
     <input type="text" name="id_libro" value="id libro">
-    <input type="submit" value="Aggiungi">
+    <input type="submit" value="Add">
 </form>
-<a href="/admin">Torna alla home admin</a>
+<a href="/admin">HomePage Admin</a>

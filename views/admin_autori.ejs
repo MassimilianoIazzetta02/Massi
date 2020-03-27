@@ -1,26 +1,24 @@
 <% autori.forEach(autore => { %>
     <ul>
         <li>ID: <%= autore.id %> </li>
-        <li>Nome: <%= autore.nome %> </li>
-        <li>Cognome: <%= autore.cognome %> </li>
-        <li>Modifica sotto</li>
+        <li>Name: <%= autore.nome %> </li>
+        <li>Surname: <%= autore.cognome %> </li>
+        <li>Edit</li>
         <form method="POST" action="/modificautori">
-            <input type="hidden" name="id" value="<%= autore.id %>">
             <input type="text" name="nome"> 
             <input type="text" name="cognome"> 
-            <input type="submit" value="Modifica"> 
+            <input type="submit" value="Edit"> 
         </form>
         <form action="/delautore" method="post">
             <input type="hidden" name="id" value="<%= autore.id %>">
-            <input type="submit" value="Elimina">
+            <input type="submit" value="Delete">
         </form>
     </ul>
 <% }) %>
-<p>Aggiunta autore</p>
+<p>Add Writer</p>
 <form action="/addautore" method="post">
-    <input type="text" name="id" value="ID">
     <input type="text" name="cognome" value="cognome">
     <input type="text" name="nome" value="nome">
     <input type="submit" value="Aggiungi">
 </form>
-<a href="/admin">Torna alla home admin</a>
+<a href="/admin">HomePage Admin</a>

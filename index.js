@@ -12,10 +12,10 @@
 }) ;
 
 app.get('/',function(req,res){
-    let sql = "SELECT libri.id, libri.titolo, group_concat(autori.cognome) as autori FROM libri INNER JOIN autori_libri ON libri.id=autori_libri.id_libro INNER JOIN autori ON autori_libri.id_autore=autori.id GROUP BY libri.id ORDER BY libri.titolo"
+            let sql = "SELECT libri.id, libri.titolo, group_concat(autori.cognome) as autori FROM libri INNER JOIN autori_libri ON libri.id=autori_libri.id_libro INNER JOIN autori ON autori_libri.id_autore=autori.id GROUP BY libri.id ORDER BY libri.titolo"
     db.all(sql,(err,rows)=>{
         if (err) res.send('ERRORE');
-        else res.render('index',{rows});
+            else res.render('index',{rows});
     });
 });
 
@@ -98,24 +98,24 @@ app.post("/dellibro", function(req, res) {
                           res.redirect('/admin/libri');
 });
 app.post('/modrelazione',(req,res)=>{
-    const id=parseInt(req.body.id);
+            const id=parseInt(req.body.id);
     sql="UPDATE autori_libri SET id_autore='"+req.body.id_autore+"',id_libro='"+req.body.id_libro+"' WHERE autori_libri.id = "+id;
-    console.log(sql)
-    db.run(sql);
-    res.redirect('/admin/relazioni');
+           console.log(sql)
+           db.run(sql);
+  res.redirect('/admin/relazioni');
 });
 
 app.post('/delrelazione',(req,res)=>{
-    const id=parseInt(req.body.id);
-    let sql = `DELETE FROM autori_libri WHERE autori_libri.id=${id}`;
-    db.run(sql);
+          const id=parseInt(req.body.id);
+                 let sql = `DELETE FROM autori_libri WHERE autori_libri.id=${id}`;
+  db.run(sql);
     res.redirect('/admin/relazioni');
 });
 
 app.post("/addrelazione", function(req, res) {
-    sql="insert into autori_libri (id_autore, id_libro) values('"+req.body.id_autore+"','"+req.body.id_libro+"')";
-    db.run(sql);
-    res.redirect('/admin/relazioni');
+                 sql="insert into autori_libri (id_autore, id_libro) values('"+req.body.id_autore+"','"+req.body.id_libro+"')";
+   db.run(sql);
+            res.redirect('/admin/relazioni');
 });
 app.use( function(req, res){
      res.status(404);

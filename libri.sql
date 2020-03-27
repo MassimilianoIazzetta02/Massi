@@ -8,9 +8,9 @@ create table autori (
     cognome text not null
 );
 
-insert into autori (nome, cognome) values ('Giovanni', 'Boccaccio');
-insert into autori (cognome) values ('Pascoli');
-insert into autori (cognome) values ('Verga');
+insert into autori (nome, cognome) values ('stephen', 'king');
+insert into autori (cognome) values ('Rowling');
+insert into autori (cognome) values ('Freud');
 insert into autori (cognome) values ('Autore2');
 insert into autori (cognome) values ('Autore3');
 
@@ -24,9 +24,9 @@ create table libri (
     titolo text not null
 );
 
-insert into libri (titolo) values ('Decamerone');
-insert into libri (titolo) values ('X agosto');
-insert into libri (titolo) values ('Mastro-Don Gesualdo');
+insert into libri (titolo) values ('It');
+insert into libri (titolo) values ('Harry Potter');
+insert into libri (titolo) values ("L'interpretazione dei sogni");
 insert into libri (titolo) values ('Test senza autori');
 
 select * from libri;
